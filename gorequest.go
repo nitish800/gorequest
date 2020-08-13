@@ -124,6 +124,7 @@ func New() *SuperAgent {
 	// disable keep alives by default, see this issue https://github.com/parnurzeal/gorequest/issues/75
 	s.Transport.DisableKeepAlives = true
 	s.Transport.MaxIdleConns = 10
+	s.Client.Timeout = time.Second * 10
 	//s.Transport.MaxConns = 0
 	return s
 }
